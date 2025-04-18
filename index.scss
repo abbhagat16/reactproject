@@ -1,0 +1,116 @@
+:root{
+    --background-color: #fff;
+    --background-light: #fff;
+    --shadow-color: rgba(0,0,0,0.2);
+    --primary-color:rgb(255,0,86);
+    --text-color:#0A0A0A;
+    --text-light: #575757;
+    --font-size:16px;
+    --animation-speed:1;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.navbar{height: 55px;
+box-shadow: 0 3px 6px var(--shadow-color) ;
+background-color: var(--background-color);
+color: var(--text-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+.logo{
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: var(--primary-color);
+    span{
+         color:var(--text-color);
+    }
+}
+
+.nav-links a{
+    margin-left: 1em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.nav-links  :hover{
+    text-decoration: underline;
+    text-decoration-color : var(--primary-color) ;
+    
+}
+.side-bar{
+   
+    height: 28px;
+    width: 30px;
+    position: relative;
+    right: 0;
+    
+    .bar{
+        height: 6px;
+        width: 32px;
+        background-color: var(--text-color);
+        position: absolute;
+        border-radius: 8px;
+        
+        &:nth-child(1){
+            top: 0%;
+        }
+        &:nth-child(2){
+            top: 50%;
+            transform-origin: right;
+            
+            transform: scaleX(0.8) translateY(-50%);
+        }
+        &:nth-child(3){
+            top: 100%;
+            transform-origin: right;
+            transform: scaleX(1.1) translateY(-100%);
+        }
+    }
+    &.active{
+       .bar{
+        transform-origin: center;
+        top: 50%;
+        &:nth-child(1){
+            transform: rotate(45deg) ;
+        }
+        &:nth-child(2){
+            transform: rotate(-45deg);
+        }
+        &:nth-child(3){
+            transform: scaleX(0);
+        }
+       }
+    }
+}
+
+
+}
+
+.nav-links{
+    margin-left: 1em;
+    color: var(--text-light);
+}
+
+.container{
+    padding-inline: 20vh;
+}
+
+body{
+    font-size: var(--font-size);
+    font-family: sans-serif;
+}
+
+@media  (max-width:768px){
+    .nav-links{
+        display: none;
+    }
+    
+}
